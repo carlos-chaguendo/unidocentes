@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ngdemoApp">
+<head>
+
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<title>Asistencia Docente</title>
+<!-- AngularJS -->
+<script src="scripts/angularjs/angular.min.js"></script>
+<script src="scripts/angularjs/angular-resource.min.js"></script>
+<script src="scripts/angularjs/angular-route.js"></script>
+<script src="scripts/app.js"></script>
+<script src="scripts/services/services.js"></script>
+<script src="scripts/controllers/controllers.js"></script>
+
+<!-- CSS -->
+
+<!-- <link href="resources/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+<!--     <link href="resources/bootstrap/css/bootstrap-datetimepicker.css" rel="stylesheet"> -->
+<!--     <link href="resources/bootstrap/css/bootstrap-datetimepicker.min.css" rel="stylesheet"> -->
+<!--     <link href="resources/bootstrap/css/Plantilla.css" rel="stylesheet"> -->
+    
+<!-- <!--     <link rel="stylsheet" type="text/css" href="CSS/MisEstilos.css" /> --> 
+
+	<link href="../resources/bootstrap/css/bootstrap.min.css" rel="stylesheet" >
+    <link href="../resources/bootstrap/css/bootstrap-datetimepicker.css" rel="stylesheet" >
+    <link href="../resources/bootstrap/css/bootstrap-datetimepicker.min.css" rel="stylesheet" >
+    <link href="../resources/bootstrap/css/Plantilla.css" rel="stylesheet" >
+    
+
+
+</head>
+
+
+
+<body>
+
+	<header>
+		<div class="container">
+			<h1>Materia / Asistencia Docente</h1>
+		</div>
+	</header>
+
+	<div class="container">
+
+		<br>
+
+		<header>
+			<nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button class="navbar-toggle collapsed" data-toggle="collapse"
+							data-target="#navbar-1" type="button">
+							<span class="sr-only">Menu</span> <span class="icon-bar"></span>
+							<span class="icon-bar"></span> <span class="icon-bar"></span>
+						</button>
+						<a href="#" class="navbar-brand">NombreUsuario</a>
+					</div>
+					<div class="collapse navbar-collapse" id="navbar-1">
+						<ul class="nav navbar-nav">
+							<li class="dropdown"><a class="dropdown-toggle"
+								data-toggle="dropdown" href="#">Mis Materias <span
+									class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<li><a href="#">Materia #1</a></li>
+									<li><a href="#">Materia #2</a></li>
+									<li><a href="#">Materia #3</a></li>
+									<li><a href="#">Materia #4</a></li>
+									<li><a href="#">Materia #5</a></li>
+								</ul></li>
+							<li class=""><a href="Microcurriculos.html">Microcurriculos</a></li>
+							<li class=""><a href="PlaneadoresAcademicos.html">Planeador
+									docente</a></li>
+							<li class="active"><a href="Bitacora.html">Asistencia
+									docente</a></li>
+						</ul>
+
+						<ul class="nav navbar-nav navbar-right">
+							<li class=""><a href="../index.html">Salir</a></li>
+						</ul>
+
+					</div>
+				</div>
+			</nav>
+		</header>
+
+		<form action="" class="form-horizontal" role="form">
+			<div class="form-group">
+				<label class="control-label col-xs-2 col-sm-2 col-md-2 col-lg-2"
+					for="passwordinput">Contenido</label>
+				<div
+					class="table-responsive col-xs-10 col-sm-10 col-md-10 col-lg-10">
+					<table class="table table-striped table-bordered table-hover">
+						<tr>
+							<th class="">Fecha</th>
+							<th class="">Tema</th>
+							<th class="">Total Hora</th>
+							<th class="">Acciones</th>
+						</tr>
+						<tr>
+							<td class="">21/01/2017</td>
+							<td class="">Tema A; Tema B; Tema C; Tema D</td>
+							<td class="">4</td>
+							<td class="">
+								<button type="button" class="btn btn-primary"
+									data-toggle="modal" data-target="#popupModificarRegistro">
+									<span class="glyphicon glyphicon-pencil"></span>
+								</button>
+								<button type="button" class="btn btn-danger" data-toggle="modal"
+									data-target="#popupEliminarRegistro">
+									<span class="glyphicon glyphicon-trash"></span>
+								</button>
+							</td>
+						</tr>
+						<tr>
+							<td class="">06/02/2017</td>
+							<td class="">Tema A; Tema B; Tema C; Tema D</td>
+							<td class="">3</td>
+							<td class="">
+								<button type="button" class="btn btn-primary"
+									data-toggle="modal" data-target="#popupModificarRegistro">
+									<span class="glyphicon glyphicon-pencil"></span>
+								</button>
+								<button type="button" class="btn btn-danger" data-toggle="modal"
+									data-target="#popupEliminarRegistro">
+									<span class="glyphicon glyphicon-trash"></span>
+								</button>
+							</td>
+						</tr>
+						<tr>
+							<td class="">18/03/2017</td>
+							<td class="">Tema A; Tema B; Tema C; Tema D</td>
+							<td class="">4</td>
+							<td class="">
+								<button type="button" class="btn btn-primary"
+									data-toggle="modal" data-target="#popupModificarRegistro">
+									<span class="glyphicon glyphicon-pencil"></span>
+								</button>
+								<button type="button" class="btn btn-danger" data-toggle="modal"
+									data-target="#popupEliminarRegistro">
+									<span class="glyphicon glyphicon-trash"></span>
+								</button>
+							</td>
+						</tr>
+						<tr>
+							<td class="">29/04/2017</td>
+							<td class="">Tema A; Tema B; Tema C; Tema D</td>
+							<td class="">3.5</td>
+							<td class="">
+								<button type="button" class="btn btn-primary"
+									data-toggle="modal" data-target="#popupModificarRegistro">
+									<span class="glyphicon glyphicon-pencil"></span>
+								</button>
+								<button type="button" class="btn btn-danger" data-toggle="modal"
+									data-target="#popupEliminarRegistro">
+									<span class="glyphicon glyphicon-trash"></span>
+								</button>
+						</tr>
+					</table>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div
+					class="col-xs-2 col-xs-offset-2 col-sm-4 col-sm-offset-2 col-md-4 col-md-offset-2 col-lg-4 col-lg-offset-2">
+					<button type="button" id="btnRegistrarse" class="btn btn-primary"
+						data-toggle="modal" data-target="#popupAgregarRegistro">Agregar
+						Registro</button>
+				</div>
+			</div>
+		</form>
+	</div>
+
+	<!-- Modal Agregar Registro-->
+	<div class="modal fade" id="popupAgregarRegistro" tabindex="-1"
+		role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content ">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">&times;</span> <span class="sr-only">Cerrar</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">Agregar Registro de
+						clases</h4>
+				</div>
+				<div id="nuevaAventura" class="modal-body">
+					<form role="form">
+						<div class="form-group">
+							<div class="row">
+								<div class="col-xs-6">
+									<label for="nombreAventura">Fecha</label>
+									<div id="dtpFecha2" class="input-group date">
+										<input type="text" class="form-control"></input> <span
+											class="input-group-addon"> <span
+											class="glyphicon glyphicon-calendar"></span>
+										</span>
+									</div>
+								</div>
+								<div class="col-xs-6">
+									<label for="nombreAventura">Total Horas</label> <input
+										type="text" class="form-control" id="nombreAventura"
+										placeholder="Total horas"></input>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="nombreAventura">Temas</label>
+							<div class="row">
+								<div class="col-xs-12">
+									<ul class="list-group checked-list-box">
+										<li class="list-group-item" data-color="success">Tema 1
+											ya agregado en el Microcurriculo</li>
+										<li class="list-group-item" data-color="success">Tema 2
+											ya agregado en el Microcurriculo</li>
+										<li class="list-group-item" data-color="success">Tema 3
+											ya agregado en el Microcurriculo</li>
+										<li class="list-group-item" data-color="success">Tema 4
+											ya agregado en el Microcurriculo</li>
+										<li class="list-group-item" data-color="success">Tema 5
+											ya agregado en el Microcurriculo</li>
+										<li class="list-group-item" data-color="success">Tema 6
+											ya agregado en el Microcurriculo</li>
+										<li class="list-group-item" data-color="success">Tema 7
+											ya agregado en el Microcurriculo</li>
+										<li class="list-group-item" data-color="success">Tema 8
+											ya agregado en el Microcurriculo</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-success" id="botonAventura"
+						onClick="nuevaAventura()">Guardar</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal Modificar Registro-->
+	<div class="modal fade" id="popupModificarRegistro" tabindex="-1"
+		role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content ">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">&times;</span> <span class="sr-only">Cerrar</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">Modificar Registro
+						de clases</h4>
+				</div>
+				<div id="nuevaAventura" class="modal-body">
+					<form role="form">
+						<div class="form-group">
+							<div class="row">
+								<div class="col-xs-6">
+									<label for="nombreAventura">Fecha</label>
+									<div id="dtpFecha3" class="input-group date">
+										<input type="text" class="form-control"></input> <span
+											class="input-group-addon"> <span
+											class="glyphicon glyphicon-calendar"></span>
+										</span>
+									</div>
+								</div>
+								<div class="col-xs-6">
+									<label for="nombreAventura">Total Horas</label> <input
+										type="text" class="form-control" id="nombreAventura"
+										placeholder="Total horas"></input>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="nombreAventura">Temas</label>
+							<div class="row">
+								<div class="col-xs-12">
+									<ul class="list-group checked-list-box">
+										<li class="list-group-item" data-color="success">Tema 1
+											ya agregado en el Microcurriculo</li>
+										<li class="list-group-item" data-color="success">Tema 2
+											ya agregado en el Microcurriculo</li>
+										<li class="list-group-item" data-color="success">Tema 3
+											ya agregado en el Microcurriculo</li>
+										<li class="list-group-item" data-color="success">Tema 4
+											ya agregado en el Microcurriculo</li>
+										<li class="list-group-item" data-color="success">Tema 5
+											ya agregado en el Microcurriculo</li>
+										<li class="list-group-item" data-color="success">Tema 6
+											ya agregado en el Microcurriculo</li>
+										<li class="list-group-item" data-color="success">Tema 7
+											ya agregado en el Microcurriculo</li>
+										<li class="list-group-item" data-color="success">Tema 8
+											ya agregado en el Microcurriculo</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-success" id="botonAventura"
+						onClick="nuevaAventura()">Guardar</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Modal Eliminar Registro-->
+	<div class="modal fade" id="popupEliminarRegistro" tabindex="-1"
+		role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content ">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">&times;</span> <span class="sr-only">Cerrar</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">Eliminar Registro</h4>
+				</div>
+				<div id="nuevaAventura" class="modal-body">Esta a punto de
+					eliminar un registro. ¿Desea continuar con la operacion?.</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-danger" id="botonAventura"
+						onClick="nuevaAventura()">Eliminar</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Javascript -->
+
+
+
+	<script type="text/javascript"src="resources/bootstrap/js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript"src="resources/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript"src="resources/bootstrap/js/moment.js"></script>
+	<script type="text/javascript"src="resources/bootstrap/js/bootstrap-datetimepicker.js"></script>
+	<script type="text/javascript"src="resources/bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+	<script type="text/javascript"src="resources/bootstrap/js/personal.js"></script>
+
+	<script type="text/javascript">
+        $(  function () 
+            { 
+              $("#dtpFecha2").datetimepicker();
+              $("#dtpFecha3").datetimepicker();
+            }
+          );
+      </script>
+</body>
+</html>

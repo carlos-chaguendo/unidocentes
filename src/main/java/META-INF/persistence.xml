@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="unidocentes">
+		<jta-data-source>java:/oracle</jta-data-source>
+		<class>com.jpa.entities.TblAsignatura</class>
+		<class>com.jpa.entities.TblBibliografia</class>
+		<class>com.jpa.entities.TblBitacora</class>
+		<class>com.jpa.entities.TblDocente</class>
+		<class>com.jpa.entities.TblEstadomicrocurr</class>
+		<class>com.jpa.entities.TblEstadousuario</class>
+		<class>com.jpa.entities.TblEstrategia</class>
+		<class>com.jpa.entities.TblEvaluacione</class>
+		<class>com.jpa.entities.TblFuncione</class>
+		<class>com.jpa.entities.TblHistoriale</class>
+		<class>com.jpa.entities.TblInfadicional</class>
+		<class>com.jpa.entities.TblLenguaje</class>
+		<class>com.jpa.entities.TblMicrocurriculo</class>
+		<class>com.jpa.entities.TblPlaneadore</class>
+		<class>com.jpa.entities.TblPrograma</class>
+		<class>com.jpa.entities.TblRole</class>
+		<class>com.jpa.entities.TblTemasdado</class>
+		<class>com.jpa.entities.TblTemasmicrocur</class>
+		<class>com.jpa.entities.TblTipobibliografia</class>
+		<class>com.jpa.entities.TblTipocurso</class>
+		<class>com.jpa.entities.TblUnidadmicrocur</class>
+		<class>com.jpa.entities.TblUsuario</class>
+	</persistence-unit>
+</persistence>
