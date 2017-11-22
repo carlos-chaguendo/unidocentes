@@ -1,0 +1,35 @@
+
+<div class="container-fluid">
+	<div class="navbar-header">
+
+		<button class="navbar-toggle collapsed" data-toggle="collapse"
+			ng-click="RedirectToURL()" data-target="#navbar-1" type="button">
+			<span class="sr-only">Menu</span> <span class="icon-bar"></span> <span
+				class="icon-bar"></span> <span class="icon-bar"></span>
+		</button>
+
+		<a ui-sref="root.home" class="navbar-brand">{{currentUser.name}}</a>
+	</div>
+	<div class="collapse navbar-collapse" id="navbar-1">
+		<ul class="nav navbar-nav">
+			<li class="dropdown"><a class="dropdown-toggle"
+				data-toggle="dropdown" ui-sref="root.home">Mis Materias<span
+					class="caret"></span></a>
+				<div></div>
+				<ul class="dropdown-menu">
+					<li><a href="#!materia1">Materias</a></li>
+					<li><a href="#!materia2">Materia #2</a></li>
+					<li><a href="#!materia3">Materia #3</a></li>
+					<li><a href="#!materia4">Materia #4</a></li>
+					<li><a href="#!materia5">Materia #5</a></li>
+				</ul></li>
+			<li><a ui-sref="root.home.microcurriculos"> Microcurriculos</a></li>
+			<li class=""><a ui-sref="root.home">Planeador docente</a></li>
+			<li class=""><a ui-sref="root.home.asistencia">Asistencia
+					docente</a></li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+			<li class=""><a ng-click="alert('falta ;a funcionalidad')">Salir</a></li>
+		</ul>
+	</div>
+</div>

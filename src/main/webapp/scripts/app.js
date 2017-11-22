@@ -1,34 +1,97 @@
-angular.module('ngdemoApp.controllers', []);
+angular.module('unidocentesApp.controllers', []);
+angular.module('unidocentesApp.services', []);
 
-angular.module("ngdemoApp", ['ngRoute','ngdemoApp.controllers' ])
-.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
-	  
-	  
-	  $locationProvider.hashPrefix('!');
-//	  programa-list de donde viene
-		$routeProvider.
-		//microcurriculos
-//		when('/materia1', {templateUrl: 'views/Microcurriculos.html', controller: 'MicrocurriculoListCtrl'}).
-//		when('/materia1', {templateUrl: 'views/Microcurriculos.html', controller: 'MicrocurriculoListCtrl'}).
-//		
-//		when('/programa-creation', {templateUrl: 'views/programa-creation.html', controller: 'ProgramaCreationCtrl'}).
-//		when('/programa-details', {templateUrl: 'views/programa-details.html', controller: 'ProgramaListCtrl'}).
-//		when('/universidad-create', {templateUrl: 'views/universidad-create.html', controller: 'UniversidadCreateCtrl'}).
-//		when('/universidad-list', {templateUrl: 'views/universidad-list.html', controller: 'UniversidadListCtrl'}).
-//		when('/universidad-detail/:idP/:idD/:idC', {templateUrl: 'views/universidad-detail.html', controller: 'UniversidadDetailCtrl'}).
-//		when('/universidad-view/:idP/:idD/:idC', {templateUrl: 'views/universidad-view.html', controller: 'UniversidadDetailCtrl'}).
-//		when('/microcurriculo-view', {templateUrl: 'views/Microcurriculos.html', controller: 'MicrocurriculoListCtrl'}).
-//		
-		when('/main', {templateUrl: 'views/micro-curriculos.html',controller:'MicroCurriculosCtrl'}).
+/**
+ * Se crea la alplicacion con un nombre y un arreglo de todos los modulos |
+ * Dependencia s que esta necesita
+ */
+var app = angular.module("unidocentesApp", [ 'ui.router',
+		'unidocentesApp.controllers', 'unidocentesApp.services' ]);
 
-		
-		otherwise('/main');
-		
-	  //$locationProvider.hashPrefix('');
-	  
-	  /* CORS... */
-	  /* http://stackoverflow.com/questions/17289195/angularjs-post-data-to-external-rest-api */
-	  /*$httpProvider.defaults.useXDomain = true;
-	  delete $httpProvider.defaults.headers.common['X-Requested-With'];*/
-}]);
+/**
+ * Configuracion general del la aplicacion La rutas pueden configurarse por
+ * modulos y submodulos
+ */
+app.config([ '$stateProvider', '$urlRouterProvider',
+		function($stateProvider, $urlRouterProvider) {
 
+			$urlRouterProvider.otherwise('/');
+
+			$stateProvider.state('root', {
+				url : '/',
+				controller : [ '$state', '$scope', function($state, $scope) {
+
+					$scope.currentUser = {
+						username : 'silvia.anacona',
+						name : 'Silvia Alejandra Anacona'
+					}
+
+					/*
+					 * Se debe verificar si el usario esta logeado se regirige a
+					 * home Encaso contrario hay que pedir un usuario y
+					 * contrasenia
+					 */
+
+					if ($state.current.name == 'root') {
+						$state.go('root.home', {
+							'currentUserName' : $scope.currentUser.username
+						})
+					}
+				} ],
+				templateUrl : "views/index-logeado.html",
+				data : {
+					title : "larr"
+				}
+			}).state('root.home', {
+				url : ':currentUserName',
+				data : {
+					title : "Home"
+				},
+				views : {
+					'menu' : {
+						templateUrl : 'views/menu/menu.html'
+					},
+					'root' : {
+						templateUrl : 'views/menu/bienvenida.html'
+					}
+				}
+			})
+
+			/*
+			 * Configurasion especifica de las rutas por modulos
+			 */
+			$stateProvider.state('root.home.microcurriculos', {
+				url : '/microcurriculos',
+				templateUrl : 'views/microcurriculos/listado.html',
+				data : {
+					title : "Materia / Microcurriculos"
+				}
+			}).state('root.home.microcurriculos.nuevo', {
+				url : '/nuevo',
+				templateUrl : 'views/microcurriculos/nuevo.html',
+				controller : 'MicrocurriculoNuevoCtrl',
+				data : {
+					title : "Materia / Microcurriculos / Nuevo"
+				}
+			})
+
+			/*
+			 * Configurasion especifica de las rutas
+			 */
+			$stateProvider.state('root.home.asistencia', {
+				url : '/asistencia-docente',
+				templateUrl : 'views/asistencia/listado.html',
+				data : {
+					title : "Materia / Asistencia Docente"
+				},
+			})
+
+		} ]);
+
+/**
+ * Configuracion inical de arranque de la aplicacion
+ */
+app.run([ '$rootScope', '$state', '$stateParams',
+		function($rootScope, $state, stateParams) {
+			$rootScope.$_state = $state
+		} ])

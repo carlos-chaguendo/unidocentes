@@ -1,0 +1,18 @@
+
+<header>
+	<div class="container">
+		<h1>{{$_state.current.data.title || 'state.data.title' }}</h1>
+	</div>
+</header>
+
+<div class="container">
+	<br>
+
+	<header>
+		<nav class="navbar navbar-default navbar-fixed-top navbar-inverse"
+			ui-view="menu"></nav>
+	</header>
+
+	<ui-view name="root"></ui-view>
+
+</div>

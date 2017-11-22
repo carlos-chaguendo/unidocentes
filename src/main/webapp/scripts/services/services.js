@@ -1,4 +1,4 @@
-var services = angular.module('ngdemoApp.services', ['ngResource']);
+var services = angular.module('unidocentesApp.services', ['ngResource']);
 
 var baseUrl = 'http://localhost:9090/Unidocentes/';
 //servicioprograma
